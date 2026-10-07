@@ -1,0 +1,11 @@
+- label: Home
+  url: /
+- label: Menu
+  url: /menu/
+- label: Flyer
+  url: /flyer/
+- label: Print Media
+  url: /media/
+- label: Print Kit
+  url: /print-kit/
+  active_on: kit_group

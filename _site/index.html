@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saif's Kitchen</title>
+  <meta name="description" content="An upcoming Indian fast food joint serving kebabs, rolls, biryani and burgers. Mostly non-veg, with plenty for our veg friends too.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Yatra+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <link rel="stylesheet" href="/assets/css/themes/variant.css">
+  <link rel="stylesheet" href="/assets/css/theme-controls.css">
+  <script src="/assets/js/theme.js" data-baseurl=""></script>
+</head>
+<body class="home">
+  <header class="site-header no-print">
+  <a class="brand" href="/">Saif's Kitchen</a>
+  <nav>
+    
+    <a href="/" aria-current="page">Home</a>
+    
+    <a href="/menu/">Menu</a>
+    
+    <a href="/flyer/">Flyer</a>
+    
+    <a href="/media/">Print Media</a>
+    
+    <a href="/print-kit/">Print Kit</a>
+    
+  </nav>
+  <label class="theme-selector" hidden>Theme
+    <select id="site-theme">
+      <option value="original">Original</option>
+      <option value="glow">Charcoal Glow</option>
+    </select>
+  </label>
+</header>
+
+
+  <div class="page-layout">
+    <details class="control-sidebar no-print" id="control-sidebar" open>
+      <summary>Page controls</summary>
+      <div class="control-sidebar-content">
+        <details class="theme-controls no-print" id="theme-controls" hidden>
+  <summary>Customize theme</summary>
+  <p id="theme-help">Choose Charcoal Glow to customize website and artwork decoration. Original stays unchanged.</p>
+  <fieldset id="theme-settings">
+    <legend>Appearance</legend>
+    <div class="theme-fields">
+      <label>Palette <select data-theme-setting="palette">
+        <option value="gold">Charcoal &amp; Gold</option>
+        <option value="copper">Midnight &amp; Copper</option>
+        <option value="forest">Forest &amp; Ivory</option>
+      </select></label>
+      <label>Background <select data-theme-setting="background">
+        <option value="radial">Radial glow</option><option value="solid">Solid</option>
+      </select></label>
+      <label>Base colour <input type="color" data-theme-setting="base"></label>
+      <label>Glow colour <input type="color" data-theme-setting="light"></label>
+      <label>Glow strength (%) <input type="number" min="0" max="60" step="1" data-theme-setting="strength"></label>
+      <label>Glow position <select data-theme-setting="position">
+        <option value="top">Top centre</option><option value="center">Centre</option>
+        <option value="left">Top left</option><option value="right">Top right</option>
+        <option value="bottom">Bottom centre</option>
+      </select></label>
+    </div>
+    
+    
+    <fieldset>
+      <legend>Border</legend>
+      <div class="theme-fields">
+        <label class="theme-toggle"><input type="checkbox" data-theme-setting="border"> Enabled</label>
+        <label>Style <select data-theme-setting="borderStyle">
+          <option value="solid">Solid</option><option value="dashed">Dashed</option>
+          <option value="dotted">Dotted</option><option value="double">Double</option>
+          <option value="ornate">Ornate</option><option value="geometric">Geometric</option>
+        </select></label>
+        <label>Width (mm) <input type="number" min="0.25" max="2" step="0.25" data-theme-setting="borderWidth"></label>
+        <label>Colour <input type="color" data-theme-setting="borderColor"></label>
+        <label>Motif size (mm) <input type="number" min="2" max="8" step="0.5" data-theme-setting="borderMotifSize"></label>
+        
+      </div>
+    </fieldset>
+    
+    <fieldset>
+      <legend>Outline</legend>
+      <div class="theme-fields">
+        <label class="theme-toggle"><input type="checkbox" data-theme-setting="outline"> Enabled</label>
+        <label>Style <select data-theme-setting="outlineStyle">
+          <option value="solid">Solid</option><option value="dashed">Dashed</option>
+          <option value="dotted">Dotted</option><option value="double">Double</option>
+          <option value="ornate">Ornate</option><option value="geometric">Geometric</option>
+        </select></label>
+        <label>Width (mm) <input type="number" min="0.25" max="2" step="0.25" data-theme-setting="outlineWidth"></label>
+        <label>Colour <input type="color" data-theme-setting="outlineColor"></label>
+        <label>Motif size (mm) <input type="number" min="2" max="8" step="0.5" data-theme-setting="outlineMotifSize"></label>
+        
+        <label>Inset gap (mm) <input type="number" min="1" max="4" step="0.25" data-theme-setting="gap"></label>
+        
+      </div>
+    </fieldset>
+    
+    <button type="button" class="btn" id="theme-reset">Reset variant</button>
+    <button type="button" class="btn btn-ghost" id="theme-share">Copy styled link</button>
+  </fieldset>
+  <p class="small">Ornate adds curved corner flourishes; Geometric adds stepped corners and diamonds.
+    Motif size applies to those styles only. Frames stay inside the design.
+    Motifs and strokes are capped to the available clearance, especially on small cards and mixed frames.
+    Small cards use thinner frames and a smaller gap to protect text.
+    Cut/fold guides, diet symbols, QR areas and ink-saving sheets stay fixed.
+    Dark paper backgrounds use more ink; enable background graphics when printing.</p>
+  <p id="theme-status" role="status" aria-live="polite"></p>
+</details>
+
+        
+      </div>
+    </details>
+    <main>
+      <section class="hero">
+  <p class="eyebrow">Grand Opening: Coming Soon (date to be announced)</p>
+  <h1>Saif's Kitchen</h1>
+  <p class="lead">Desi street food, grilled fresh. Coming soon!</p>
+  <p>Smoky kebabs, flaky rolls and slow-cooked dum biryani, made to order and priced for every day.</p>
+  <p class="cta">
+    <a class="btn" href="/menu/">See the tentative menu</a>
+    <a class="btn btn-ghost" href="/flyer/">Get the flyer</a>
+  </p>
+</section>
+
+<section class="features">
+  <article>
+    <h2>🔥 Off the Charcoal</h2>
+    <p>Tikkas and seekh kebabs grilled over real coal, never reheated.</p>
+  </article>
+  <article>
+    <h2>🌯 Rolls in Minutes</h2>
+    <p>Kolkata-style paratha rolls, ready while you wait.</p>
+  </article>
+  <article>
+    <h2>🍚 Dum Biryani Daily</h2>
+    <p>Small batches through the day so every plate is fresh.</p>
+  </article>
+  <article>
+    <h2><span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+ Veg Friendly</h2>
+    <p>Mostly non-veg, but our paneer and aloo picks hold their own.</p>
+  </article>
+</section>
+
+<section class="teaser">
+  <h2>Crowd favourites</h2>
+  <ul class="teaser-list"><li>
+      <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+      <strong>Chicken Tikka (6 pcs)</strong>
+      <span class="badge">Bestseller</span>
+      <span class="price">₹229</span>
+    </li><li>
+      <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+      <strong>Chicken Tikka Roll</strong>
+      <span class="badge">Must try</span>
+      <span class="price">₹149</span>
+    </li><li>
+      <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+      <strong>Chicken Dum Biryani</strong>
+      <span class="badge">Chef's special</span>
+      <span class="price">from ₹149</span>
+    </li></ul>
+  <p><a href="/menu/">View the full menu &rarr;</a></p>
+</section>
+
+<section class="print-kit">
+  <h2>Print kit</h2>
+  <p>Every page below is set up for A4 printing. Open a page and use the Print button, or press Ctrl/Cmd + P.</p>
+  <div class="kit-grid">
+    
+    <a class="kit-card" href="/menu/"><strong>Menu</strong><span>2-page A4 menu card</span></a>
+    
+    <a class="kit-card" href="/flyer/"><strong>Advertisement Flyer</strong><span>A4 opening announcement</span></a>
+    
+    <a class="kit-card" href="/media/"><strong>Table Tent, Coupons & Cards</strong><span>Cut-out sheets</span></a>
+    
+    <a class="kit-card" href="/coming-soon/"><strong>Coming Soon</strong><span>Poster, handout & social artwork</span></a>
+    
+    <a class="kit-card" href="/upi/"><strong>UPI Payment Signs</strong><span>Minimal & branded display templates</span></a>
+    
+    <a class="kit-card" href="/print-kit/"><strong>Full Restaurant Print Kit</strong><span>Launch invitations, hours, loyalty, catering & more</span></a>
+    
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Find us</h2>
+  <ul>
+    <li>📍 Near Raj Anjali, Village Bamta, Dist. Bilaspur, Himachal Pradesh 174001</li>
+    <li>🕛 12 noon to 12 midnight, all days</li>
+    <li>📞 +91 82192 61610 +91 98054 49900</li>
+    <li>✉️ saifs.kitchen@gmail.com</li>
+    <li>📷 @saifs.kitchen</li>
+  </ul>
+</section>
+
+    </main>
+  </div>
+  <footer class="site-footer no-print">
+  <p>Saif's Kitchen &middot; Near Raj Anjali, Village Bamta, Dist. Bilaspur, Himachal Pradesh 174001 &middot; +91 82192 61610 +91 98054 49900</p>
+  <p class="small">All names, prices, dates and contact details are subject to change.</p>
+</footer>
+
+</body>
+</html>

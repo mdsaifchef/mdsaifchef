@@ -1,0 +1,20 @@
+<header class="site-header no-print">
+  <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  <nav>
+    {% for item in site.data.navigation %}
+    <a href="{{ item.url | relative_url }}"{% if item.active_on == 'kit_group' %}{% if page.kit_group %} aria-current="page"{% endif %}{% elsif page.url == item.url %} aria-current="page"{% endif %}>{{ item.label }}</a>
+    {% endfor %}
+  </nav>
+  <label class="theme-selector" hidden>Theme
+    <select id="site-theme">
+      <option value="original">Original</option>
+      <option value="glow">Charcoal Glow</option>
+    </select>
+  </label>
+</header>
+{% if page.printable %}
+<div class="print-bar no-print">
+  <span>This page is print-ready ({{ page.paper | default: "A4" }}).</span>
+  <button type="button" onclick="window.print()">🖨️ Print</button>
+</div>
+{% endif %}

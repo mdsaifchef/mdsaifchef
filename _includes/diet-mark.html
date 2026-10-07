@@ -1,0 +1,6 @@
+{%- comment -%}
+  Indian food-type mark. Usage: {% include diet-mark.html type="veg" %}
+  type: veg | nonveg | egg
+{%- endcomment -%}
+{%- assign t = include.type | default: "veg" -%}
+<span class="mark mark-{{ t }}" role="img" aria-label="{% if t == 'veg' %}Vegetarian{% elsif t == 'egg' %}Contains egg{% else %}Non-vegetarian{% endif %}" title="{% if t == 'veg' %}Vegetarian{% elsif t == 'egg' %}Contains egg{% else %}Non-vegetarian{% endif %}"></span>

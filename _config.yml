@@ -1,0 +1,24 @@
+title: "Saif's Kitchen"
+tagline: "Desi street food, grilled fresh. Coming soon!"
+description: >-
+  An upcoming Indian fast food joint serving kebabs, rolls, biryani and
+  burgers. Mostly non-veg, with plenty for our veg friends too.
+# Placeholder details. Replace with real information before launch.
+contact:
+  address: "Near Raj Anjali, Village Bamta, Dist. Bilaspur, Himachal Pradesh 174001"
+  phone: "+91 82192 61610 +91 98054 49900"
+  email: "saifs.kitchen@gmail.com"
+  instagram: "@saifs.kitchen"
+  hours: "12 noon to 12 midnight, all days"
+  opening: "Grand Opening: Coming Soon (date to be announced)"
+currency: "₹"
+
+url: ""
+baseurl: ""
+
+markdown: kramdown
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

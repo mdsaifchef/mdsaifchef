@@ -1,0 +1,65 @@
+<section class="kit-controls" aria-label="Print kit options">
+  <h1>{{ page.title }}</h1>
+  <p>Choose Original for warm cream, chilli red and saffron, or customize Charcoal Glow above.
+    The selected styling is used for both printing and PNG downloads.
+    All dates, offers and payment details are placeholders; replace before use.</p>
+  <div class="kit-options" hidden>
+    <label>Template
+      <select id="kit-template">
+        {% for item in site.data.print_kit.templates %}
+          {% if page.kit_group == 'all' or page.kit_group == item.id or page.kit_group == item.category %}
+        <option value="{{ item.id }}">{{ item.name }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    </label>
+    <label>Format
+      <select id="kit-format">
+        <option value="a4">A4 · 210 × 297 mm</option>
+        <option value="a5">A5 · 148 × 210 mm</option>
+        <option value="square">Social post · 1080 × 1080 px</option>
+        <option value="story">Social story · 1080 × 1920 px</option>
+      </select>
+    </label>
+    <label>Image quality
+      <select id="kit-scale">
+        <option value="1">1× · standard</option>
+        <option value="2" selected>2× · high quality</option>
+        <option value="3">3× · extra high quality</option>
+      </select>
+    </label>
+    <button class="btn" id="kit-export" type="button">Download PNG</button>
+    <button class="btn btn-ghost" id="kit-share" type="button">Copy template link</button>
+  </div>
+  <p id="kit-export-status" role="status" aria-live="polite"></p>
+  <p id="kit-guidance" aria-live="polite">Without JavaScript, Print outputs all templates below on A4.</p>
+  <details>
+    <summary>Printing, folding, QR setup &amp; social sharing</summary>
+    <ul>
+      <li>Print at 100% / actual size with browser headers and footers off and background graphics on.
+        Choose matching A4 or A5 paper. Keep important content at least 10 mm from edges; no bleed required.</li>
+      <li>Loyalty cards and reserved tents use A4 only, to preserve cut size and fold alignment.
+        Use 200–300 gsm stock for cards and display signs, 80–120 gsm for handouts.
+        Dashed borders mean cut; the table tent’s center line means fold, not cut.</li>
+      <li>Use Download PNG to save only the artwork, one image per visible page.
+        Choose square or story and 1× quality for a 1080 px-wide social image;
+        2× (default) or 3× produces sharper, larger files. Allow multiple downloads if prompted.
+        Social formats are for images, not paper printing; choose A4/A5 again before printing.</li>
+      <li>UPI: set the merchant name, ID, phone and local QR image in <code>_data/print_kit.yml</code>.
+        Use the original merchant-issued QR, black on white, without a logo overlay.
+        Leave an unprinted quiet zone of at least four QR modules on every side.
+        The displayed image is 62 mm square on paper, with 8 mm extra white padding.
+        Never stretch, crop or place a fold through it.</li>
+      <li>Before displaying a payment sign, scan the final printed proof using more than one UPI app.
+        Confirm that the recipient and UPI ID match your merchant account and test a small payment.
+        The empty QR area is intentionally not scannable. A shared QR image needs a second device
+        or a UPI app supporting gallery scanning.</li>
+    </ul>
+  </details>
+  {% assign related_pages = site.data.print_pages | where_exp: "item", "item.kit_footer_label" %}
+  <p>
+    {% for item in related_pages %}
+    {% unless forloop.first %} · {% endunless %}<a href="{{ item.url | relative_url }}">{{ item.kit_footer_label }}</a>
+    {% endfor %}
+  </p>
+</section>

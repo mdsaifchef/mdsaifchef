@@ -1,0 +1,12 @@
+<header class="kit-art-header">
+  <p class="eyebrow">{{ site.title | escape }}</p>
+  <h2>A first taste.</h2>
+  <p>You’re invited to our soft opening.</p>
+</header>
+<div class="kit-art-body">
+  <p class="kit-highlight">{{ site.data.print_kit.opening_date }}<br>{{ site.data.print_kit.opening_time }}</p>
+  <p>A small preview, fresh flavours and your honest feedback.</p>
+  <p>RSVP by {{ site.data.print_kit.rsvp_date }}<br>{{ site.contact.phone | escape }}</p>
+  <p class="small">Limited seats · confirmation required · sample invitation.</p>
+</div>
+{% include print-artwork/site-footer.html %}

@@ -1,0 +1,4 @@
+# Placeholder combo deals
+- { name: "Roll + Fries + Drink", desc: "Any chicken roll, masala fries, nimbu soda", price: 229, type: nonveg }
+- { name: "Biryani Meal", desc: "Chicken biryani, 2 pc Chicken 65, phirni", price: 349, type: nonveg }
+- { name: "Veg Thali-in-a-Box", desc: "Veg biryani, paneer tikka roll, chaas", price: 279, type: veg }

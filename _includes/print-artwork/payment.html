@@ -1,0 +1,26 @@
+{% assign kit = site.data.print_kit %}
+<header class="kit-art-header">
+  <p class="eyebrow">{% if include.branded %}{{ site.title | escape }}{% else %}UPI payments{% endif %}</p>
+  <h2>Scan to Pay</h2>
+  <p>Pay via UPI</p>
+</header>
+<div class="qr-area">
+  {% if kit.payment.qr_image and kit.payment.qr_image != '' %}
+  <img class="payment-qr" src="{{ kit.payment.qr_image | relative_url | escape }}"
+    alt="Payment QR for {{ kit.payment.merchant | escape }}" width="400" height="400">
+  <p class="qr-error" hidden>QR image unavailable — do not display this sign.</p>
+  {% else %}
+  <div class="qr-placeholder">
+    <strong>MERCHANT QR HERE</strong>
+    <span>Replace with your verified UPI QR</span>
+    <span>Placeholder · not scannable</span>
+  </div>
+  {% endif %}
+</div>
+<div class="payment-details">
+  <strong>{{ kit.payment.merchant | escape }}</strong>
+  <p>UPI ID: {{ kit.payment.upi_id | escape }}</p>
+  <p>Phone: {{ kit.payment.phone | escape }}</p>
+</div>
+<p class="kit-note">Check the recipient name in your app before paying.<br>Please show the successful payment to our team.</p>
+{% if include.branded %}<footer class="kit-art-footer">{{ site.tagline | escape }}</footer>{% endif %}

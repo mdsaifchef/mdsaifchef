@@ -1,0 +1,72 @@
+# Tentative menu. All dishes and prices are placeholders.
+# type: veg | nonveg | egg    spice: 0-3    tag: optional badge text
+- category: "Kebabs & Tikkas"
+  note: "Charcoal-grilled, served with mint chutney and onion rings"
+  items:
+    - { name: "Chicken Tikka (6 pcs)", desc: "Yoghurt and red chilli marinated boneless chicken", price: 229, type: nonveg, spice: 2, tag: "Bestseller" }
+    - { name: "Malai Chicken Tikka (6 pcs)", desc: "Creamy cashew and cheese marinade, mildly spiced", price: 249, type: nonveg, spice: 1 }
+    - { name: "Mutton Seekh Kebab (4 pcs)", desc: "Minced mutton skewers with house garam masala", price: 289, type: nonveg, spice: 2 }
+    - name: "Tandoori Chicken"
+      desc: "Classic bone-in, smoky and tangy"
+      sizes:
+        - { name: "Half", price: 259 }
+        - { name: "Full", price: 469 }
+      type: nonveg
+      spice: 2
+    - { name: "Fish Amritsari", desc: "Gram flour battered, ajwain spiced fried fish", price: 279, type: nonveg, spice: 2 }
+    - { name: "Paneer Tikka (6 pcs)", desc: "Cottage cheese, capsicum and onion off the grill", price: 209, type: veg, spice: 1 }
+
+- category: "Rolls & Wraps"
+  note: "Wrapped in a flaky paratha. Add an egg layer for ₹20"
+  items:
+    - { name: "Chicken Tikka Roll", desc: "Tikka, pickled onions, green chutney", price: 149, type: nonveg, spice: 2, tag: "Must try" }
+    - { name: "Mutton Seekh Roll", desc: "Seekh kebab, onions and lime", price: 179, type: nonveg, spice: 2 }
+    - { name: "Double Egg Roll", desc: "Kolkata-style egg paratha roll", price: 99, type: egg, spice: 1 }
+    - { name: "Chicken Shawarma", desc: "Rotisserie chicken, garlic toum, pickles", price: 139, type: nonveg, spice: 1 }
+    - { name: "Paneer Tikka Roll", desc: "Grilled paneer with tangy chutney", price: 129, type: veg, spice: 1 }
+    - { name: "Aloo Tikki Roll", desc: "Crispy spiced potato patty with sauces", price: 89, type: veg, spice: 1 }
+
+- category: "Burgers"
+  note: "Toasted buns, desi sauces"
+  items:
+    - { name: "Tandoori Chicken Burger", desc: "Grilled tandoori fillet, mint mayo", price: 169, type: nonveg, spice: 2 }
+    - { name: "Crispy Chicken Zinger", desc: "Fried chicken fillet, peri-peri mayo", price: 159, type: nonveg, spice: 2 }
+    - { name: "Keema Pav Burger", desc: "Spiced mutton keema, buttered bun", price: 189, type: nonveg, spice: 2 }
+    - { name: "Masala Aloo Burger", desc: "Aloo tikki, onion, tomato, chutney", price: 89, type: veg, spice: 1 }
+
+- category: "Biryani & Rice Bowls"
+  note: "Dum-cooked in small batches; served with raita and salan"
+  items:
+    - name: "Chicken Dum Biryani"
+      desc: "Hyderabadi-style, long-grain basmati"
+      sizes:
+        - { name: "Half", price: 149 }
+        - { name: "Full", price: 249 }
+      type: nonveg
+      spice: 2
+      tag: "Chef's special"
+    - name: "Mutton Dum Biryani"
+      desc: "Tender bone-in mutton, saffron rice"
+      sizes:
+        - { name: "Half", price: 199 }
+        - { name: "Full", price: 329 }
+      type: nonveg
+      spice: 2
+    - { name: "Egg Biryani", desc: "Boiled eggs tossed in masala, dum rice", price: 179, type: egg, spice: 2 }
+    - { name: "Butter Chicken Rice Bowl", desc: "Makhani gravy over jeera rice", price: 199, type: nonveg, spice: 1 }
+    - { name: "Veg Dum Biryani", desc: "Seasonal vegetables, fried onions, mint", price: 179, type: veg, spice: 1 }
+
+- category: "Sides"
+  items:
+    - { name: "Chicken 65", desc: "Crispy, curry leaf tempered bites", price: 189, type: nonveg, spice: 3 }
+    - { name: "Chicken Lollipop (5 pcs)", desc: "Indo-Chinese style with schezwan dip", price: 199, type: nonveg, spice: 2 }
+    - { name: "Masala Fries", desc: "Fries tossed in chaat masala", price: 89, type: veg, spice: 1 }
+    - { name: "Samosa (2 pcs)", desc: "Classic potato and pea filling", price: 49, type: veg, spice: 1 }
+
+- category: "Drinks & Desserts"
+  items:
+    - { name: "Masala Chaas", desc: "Spiced buttermilk", price: 49, type: veg, spice: 0 }
+    - { name: "Sweet Lassi", desc: "Thick churned yoghurt drink", price: 69, type: veg, spice: 0 }
+    - { name: "Nimbu Soda", desc: "Sweet, salted or mixed", price: 49, type: veg, spice: 0 }
+    - { name: "Gulab Jamun (2 pcs)", desc: "Warm, served in syrup", price: 59, type: veg, spice: 0 }
+    - { name: "Phirni", desc: "Chilled rice pudding in a clay pot", price: 79, type: veg, spice: 0 }

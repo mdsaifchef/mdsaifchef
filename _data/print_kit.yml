@@ -1,0 +1,66 @@
+opening_date: "DD Month 2026"
+opening_time: "Time to be confirmed"
+rsvp_date: "DD Month 2026"
+payment:
+  merchant: "Mohd. Saif"
+  upi_id: "YOUR-UPI-ID"
+  phone: "Merchant phone number"
+  # Use a merchant-issued, square QR image stored in assets; never a sample payment QR.
+  qr_image: "assets/images/upi/upi-qr.svg"
+templates:
+  - id: coming-soon
+    name: Coming soon
+    category: Launch
+    guidance: "A4 poster or A5 handout; square post or story. No fold."
+  - id: grand-opening
+    name: Grand opening
+    category: Launch
+    guidance: "A4 window poster or A5 handout; square post or story. No fold."
+  - id: soft-opening
+    name: Soft opening invitation
+    category: Launch
+    guidance: "A5 invitation; square post or story. No fold."
+  - id: upi-minimal
+    name: UPI payment — minimal
+    category: Payments
+    guidance: "A5 counter or table display in a stand; A4 wall sign. No fold or cut through the QR."
+  - id: upi-branded
+    name: UPI payment — branded
+    category: Payments
+    guidance: "A5 counter or table display in a stand; A4 wall sign. No fold or cut through the QR."
+  - id: hours
+    name: Hours sign
+    category: Everyday
+    guidance: "A4 door sign or A5 counter sign; square post or story. No fold."
+  - id: specials
+    name: Specials card
+    category: Everyday
+    guidance: "A5 table card in a stand; square post or story. Update daily."
+  - id: loyalty
+    name: Loyalty card
+    category: Everyday
+    guidance: "One 85 × 55 mm card centered on A4. Cut on dashed border; single-sided."
+  - id: thank-you
+    name: Takeout thank-you insert
+    category: Everyday
+    guidance: "A5 bag insert; square post or story. No fold."
+  - id: catering
+    name: Catering sheet
+    category: Everyday
+    guidance: "A4 information sheet or A5 handout; square post or story. No fold."
+  - id: gift
+    name: Gift certificate
+    category: Everyday
+    guidance: "A5 certificate; square post or story for promotion only. Issue unique codes before sale."
+  - id: kids
+    name: Kids’ placemat
+    category: Everyday
+    guidance: "A4 portrait activity mat, black-and-white friendly. No fold; keep crayons available."
+  - id: reserved
+    name: Reserved table tent
+    category: Everyday
+    guidance: "A4: fold at the center dashed line, printed faces outward. Place in a tent holder."
+  - id: hiring
+    name: Hiring poster
+    category: Launch
+    guidance: "A4 noticeboard poster or A5 handout; square post or story. No fold."

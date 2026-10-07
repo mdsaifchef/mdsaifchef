@@ -1,0 +1,2 @@
+{% assign artwork_include = include.item.id | prepend: 'print-artwork/' | append: '.html' %}
+{% include {{ artwork_include }} item=include.item %}

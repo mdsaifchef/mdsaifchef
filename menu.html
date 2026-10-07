@@ -1,0 +1,90 @@
+---
+layout: default
+title: Menu
+permalink: /menu/
+printable: true
+paper: A4, 2 pages
+body_class: print-page
+---
+{%- assign half = site.data.menu.size | divided_by: 2 -%}
+{%- for page_no in (0..1) -%}
+{%- if page_no == 0 -%}{%- assign start = 0 -%}{%- assign count = half -%}{%- else -%}{%- assign start = half -%}{%- assign count = site.data.menu.size | minus: half -%}{%- endif -%}
+<section class="sheet menu-sheet">
+  <header class="menu-head">
+    <p class="eyebrow">Tentative Menu</p>
+    <h1>{{ site.title }}</h1>
+    <p class="menu-legend">
+      {% include diet-mark.html type="veg" %} Veg
+      {% include diet-mark.html type="nonveg" %} Non-veg
+      {% include diet-mark.html type="egg" %} Egg
+      <span class="spice">🌶️</span> Spice level
+    </p>
+  </header>
+
+  <div class="menu-cols">
+    {%- for cat in site.data.menu offset: start limit: count %}
+    <div class="menu-cat">
+      <h2>{{ cat.category }}</h2>
+      {%- if cat.note %}<p class="cat-note">{{ cat.note }}</p>{% endif %}
+      <ul>
+        {%- for item in cat.items %}
+        <li class="menu-item">
+          <div class="item-heading">
+            {% include diet-mark.html type=item.type %}
+            <span class="item-name">{{ item.name }}</span>
+            {% include spice.html level=item.spice %}
+            {% unless item.sizes %}
+            <span class="dots"></span>
+            <span class="price">{{ site.currency }}{{ item.price }}</span>
+            {% endunless %}
+          </div>
+          <p class="item-desc">{{ item.desc }}{% if item.tag %} <span class="badge">{{ item.tag }}</span>{% endif %}</p>
+          {% if item.sizes %}
+          <div class="item-prices">
+            {% for size in item.sizes %}
+            <div class="item-price-line">
+              <span class="item-variant">{{ size.name }}</span>
+              <span class="dots"></span>
+              <span class="price">{{ site.currency }}{{ size.price }}</span>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endfor %}
+  </div>
+
+  {%- if forloop.last %}
+  <div class="combos">
+    <h2>Combo Deals</h2>
+    <div class="combo-grid">
+      {%- for c in site.data.combos %}
+      <div class="combo">
+        <div>{% include diet-mark.html type=c.type %} <strong>{{ c.name }}</strong></div>
+        <p>{{ c.desc }}</p>
+        <span class="price">{{ site.currency }}{{ c.price }}</span>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+  {%- endif %}
+
+  <footer class="menu-foot">
+    <span class="menu-contact">
+      <a href="tel:{{ site.contact.phone | remove: ' ' }}" aria-label="Call {{ site.contact.phone }}">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.08 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69A2 2 0 0 1 22 16.92Z"/></svg>
+        {{ site.contact.phone }}
+      </a>
+      <a href="https://www.instagram.com/{{ site.contact.instagram | remove: '@' }}/" aria-label="Instagram {{ site.contact.instagram }}">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".75" class="icon-dot"/></svg>
+        {{ site.contact.instagram }}
+      </a>
+    </span>
+    <span>Prices in INR, inclusive of taxes. Menu and prices are tentative.</span>
+    <span>Page {{ forloop.index }} / 2</span>
+  </footer>
+</section>
+{%- endfor -%}

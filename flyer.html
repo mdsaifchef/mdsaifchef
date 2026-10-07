@@ -1,0 +1,53 @@
+---
+layout: default
+title: Advertisement Flyer
+permalink: /flyer/
+printable: true
+paper: A4
+body_class: print-page
+---
+<section class="sheet flyer">
+  <div class="flyer-top">
+    <p class="eyebrow">{{ site.contact.opening }}</p>
+    <h1>{{ site.title }}</h1>
+    <p class="flyer-tag">Kebabs &middot; Rolls &middot; Biryani &middot; Burgers</p>
+  </div>
+
+  <div class="flyer-offer">
+    <span class="burst">20%<small>OFF</small></span>
+    <div>
+      <h2>Opening Week Offer</h2>
+      <p>Flat 20% off on your entire order during our first 7 days.<br>
+      Bring this flyer or show it on your phone.</p>
+      <p class="small">*Placeholder offer. Terms &amp; conditions apply.</p>
+    </div>
+  </div>
+
+  <div class="flyer-dishes">
+    {%- assign shown = 0 -%}
+    {%- for cat in site.data.menu -%}
+      {%- assign item = cat.items | first -%}
+      {%- if shown < 4 %}
+    <div class="flyer-dish">
+      <div class="dish-ph" aria-hidden="true">{% cycle '🍢', '🌯', '🍔', '🍛' %}</div>
+      <p>{% include diet-mark.html type=item.type %} {{ item.name }}</p>
+      <p class="price">from {{ site.currency }}{% if item.sizes %}{{ item.sizes.first.price }}{% else %}{{ item.price }}{% endif %}</p>
+    </div>
+      {%- assign shown = shown | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor %}
+  </div>
+
+  <ul class="flyer-info">
+    <li>📍 {{ site.contact.address }}</li>
+    <li>🕛 {{ site.contact.hours }}</li>
+    <li>📞 {{ site.contact.phone }} &nbsp; 📷 {{ site.contact.instagram }}</li>
+    <li>🛵 Dine-in &middot; Takeaway &middot; Delivery (partners TBA)</li>
+  </ul>
+
+  <div class="tear-strip" aria-label="Tear-off contact strips">
+    {%- for i in (1..8) %}
+    <div class="tear"><strong>{{ site.title }}</strong><span>{{ site.contact.phone }}</span></div>
+    {%- endfor %}
+  </div>
+</section>

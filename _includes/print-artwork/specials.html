@@ -1,0 +1,12 @@
+<header class="kit-art-header">
+  <p class="eyebrow">{{ site.title | escape }}</p>
+  <h2>Today’s special</h2>
+  <p>Fresh from our kitchen.</p>
+</header>
+<div class="kit-art-body">
+  <p class="kit-highlight">Chicken Dum Biryani</p>
+  <p>{% include diet-mark.html type="nonveg" %} With raita &amp; salan</p>
+  <p class="kit-highlight">{{ site.currency }}249</p>
+  <p class="small">Sample special · date: DD/MM/YYYY · while supplies last.<br>Ask our team about allergens.</p>
+</div>
+{% include print-artwork/site-footer.html %}

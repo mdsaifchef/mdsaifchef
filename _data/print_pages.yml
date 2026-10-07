@@ -1,0 +1,22 @@
+- url: /menu/
+  home_title: Menu
+  home_description: 2-page A4 menu card
+  kit_footer_label: Menu
+- url: /flyer/
+  home_title: Advertisement Flyer
+  home_description: A4 opening announcement
+  kit_footer_label: Flyer
+- url: /media/
+  home_title: Table Tent, Coupons & Cards
+  home_description: Cut-out sheets
+  kit_footer_label: Coupons, business cards & specials tent
+- url: /coming-soon/
+  home_title: Coming Soon
+  home_description: Poster, handout & social artwork
+- url: /upi/
+  home_title: UPI Payment Signs
+  home_description: Minimal & branded display templates
+- url: /print-kit/
+  home_title: Full Restaurant Print Kit
+  home_description: Launch invitations, hours, loyalty, catering & more
+  kit_footer_label: Full print kit

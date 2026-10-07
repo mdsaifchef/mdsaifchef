@@ -1,0 +1,10 @@
+{% for side in (1..2) %}
+<div class="reserved-face{% if side == 1 %} flipped{% endif %}">
+  <p class="eyebrow">{{ site.title | escape }}</p>
+  <h2>Reserved</h2>
+  <p>For: ____________________</p>
+  <p>Time: ___________________</p>
+  <p class="small">Thank you for giving our guests their space.</p>
+</div>
+{% endfor %}
+<p class="fold-line">Fold here · use a tent holder</p>

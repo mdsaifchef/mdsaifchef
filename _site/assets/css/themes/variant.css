@@ -1,0 +1,118 @@
+/* The original theme is untouched. All variant overrides are opt-in. */
+html[data-theme="glow"] {
+  --cream: #191a1c;
+  --cream-2: #292a2d;
+  --ink: #fff4e0;
+  --brown: #fff4e0;
+  --saffron: #e8b85c;
+  --chilli: #e8b85c;
+  --theme-base: #191a1c;
+  --theme-surface: radial-gradient(circle at 50% 0%, rgba(232, 184, 92, .22), transparent 65%) #191a1c;
+  --theme-border-style: solid;
+  --theme-border-width: .5mm;
+  --theme-border-color: #e8b85c;
+  --theme-outline-style: solid;
+  --theme-outline-width: .25mm;
+  --theme-outline-color: #e8b85c;
+  --theme-gap: 2mm;
+}
+html[data-theme="glow"] body { background: var(--theme-base); }
+html[data-theme="glow"] .site-header,
+html[data-theme="glow"] .site-footer { background: #101113; color: var(--ink); }
+html[data-theme="glow"] .site-header nav a { color: var(--ink); }
+html[data-theme="glow"] .site-header nav a:hover,
+html[data-theme="glow"] .site-header nav a[aria-current] { color: var(--saffron); }
+html[data-theme="glow"] .btn,
+html[data-theme="glow"] .print-bar button,
+html[data-theme="glow"] .badge { background: var(--saffron); color: #191a1c; }
+html[data-theme="glow"] .btn-ghost { background: transparent; color: var(--saffron); }
+html[data-theme="glow"] .hero .btn-ghost { border-color: var(--saffron); }
+html[data-theme="glow"] .home main > .hero,
+html[data-theme="glow"] .features article,
+html[data-theme="glow"] .kit-card,
+html[data-theme="glow"] .sheet:not(.kit-upi-minimal):not(.kit-kids):not(.kit-loyalty):not(.cards):not(.coupons):not(.tent):not(.kit-reserved),
+html[data-theme="glow"] .tent-half,
+html[data-theme="glow"] .reserved-face,
+html[data-theme="glow"] .coupon,
+html[data-theme="glow"] .bcard,
+html[data-theme="glow"] .loyalty-card { background: var(--theme-surface); color: var(--ink); }
+html[data-theme="glow"] .hero h1,
+html[data-theme="glow"] .flyer-top h1 { color: var(--ink); text-shadow: none; }
+html[data-theme="glow"] .hero .eyebrow,
+html[data-theme="glow"] .flyer-top .eyebrow { color: var(--saffron); }
+html[data-theme="glow"] .flyer-top { color: var(--ink); }
+html[data-theme="glow"] .flyer-offer,
+html[data-theme="glow"] .dish-ph,
+html[data-theme="glow"] .combos { background: var(--cream-2); }
+html[data-theme="glow"] .burst { color: #191a1c; }
+html[data-theme="glow"] .dots { border-color: var(--ink); }
+/* Preserve structural border occupancy; draw decoration independently of layout. */
+html[data-theme="glow"] .menu-sheet { border-color: transparent; outline: none; }
+html[data-theme="glow"] .kit-sheet:not(.kit-upi-minimal):not(.kit-kids),
+html[data-theme="glow"] .tent-half,
+html[data-theme="glow"] .features article,
+html[data-theme="glow"] .kit-card { border-color: transparent; }
+html[data-theme="glow"] .bcard { border-left-color: transparent; }
+html[data-theme="glow"] .cards,
+html[data-theme="glow"] .coupons,
+html[data-theme="glow"] .tent,
+html[data-theme="glow"] .kit-reserved { background: #fff; }
+html[data-theme="glow"] [data-theme-frame] { position: relative; }
+html[data-theme="glow"] [data-theme-frame]::before,
+html[data-theme="glow"] [data-theme-frame]::after {
+  content: ""; position: absolute; pointer-events: none; border-radius: inherit;
+  /* Physical border layers stay within html2canvas's artwork crop. */
+  top: 1mm; right: 1mm; bottom: 1mm; left: 1mm;
+  border: var(--theme-border-width) var(--theme-border-style) var(--theme-border-color);
+}
+html[data-theme="glow"] [data-theme-frame]::after {
+  top: calc(1mm + var(--theme-border-width) + var(--theme-gap));
+  right: calc(1mm + var(--theme-border-width) + var(--theme-gap));
+  bottom: calc(1mm + var(--theme-border-width) + var(--theme-gap));
+  left: calc(1mm + var(--theme-border-width) + var(--theme-gap));
+  border: var(--theme-outline-width) var(--theme-outline-style) var(--theme-outline-color);
+}
+html[data-theme="glow"] [data-theme-frame="small"] {
+  --theme-border-width: min(var(--frame-border-width), .6mm);
+  --theme-outline-width: min(var(--frame-outline-width), .6mm);
+  --theme-gap: min(var(--frame-gap), 1mm);
+}
+html[data-theme="glow"] [data-theme-frame="small"]::before { top: .5mm; right: .5mm; bottom: .5mm; left: .5mm; }
+html[data-theme="glow"] [data-theme-frame="small"]::after {
+  top: calc(.5mm + var(--theme-border-width) + var(--theme-gap));
+  right: calc(.5mm + var(--theme-border-width) + var(--theme-gap));
+  bottom: calc(.5mm + var(--theme-border-width) + var(--theme-gap));
+  left: calc(.5mm + var(--theme-border-width) + var(--theme-gap));
+}
+.theme-motif-frame {
+  position: absolute; pointer-events: none;
+}
+.theme-motif-edge { position: absolute; background: currentColor; }
+.theme-motif-edge-top, .theme-motif-edge-bottom {
+  left: var(--motif-size); right: var(--motif-size); height: var(--motif-stroke);
+}
+.theme-motif-edge-left, .theme-motif-edge-right {
+  top: var(--motif-size); bottom: var(--motif-size); width: var(--motif-stroke);
+}
+.theme-motif-edge-top { top: 0; }
+.theme-motif-edge-bottom { bottom: 0; }
+.theme-motif-edge-left { left: 0; }
+.theme-motif-edge-right { right: 0; }
+.theme-motif-corner { position: absolute; display: block; width: var(--motif-size); height: var(--motif-size); }
+.theme-motif-tl { top: 0; left: 0; }
+.theme-motif-tr { top: 0; right: 0; transform: rotate(90deg); }
+.theme-motif-br { bottom: 0; right: 0; transform: rotate(180deg); }
+.theme-motif-bl { bottom: 0; left: 0; transform: rotate(270deg); }
+/* Cut and fold guides are not decorative frames. */
+html[data-theme="glow"] .cut-guide,
+html[data-theme="glow"] .fold-line { background: #fff; color: #000; }
+html[data-theme="glow"] .tear-strip,
+html[data-theme="glow"] .tear,
+html[data-theme="glow"] .coupon { border-color: #aaa; }
+html[data-theme="glow"] .kit-upi-minimal,
+html[data-theme="glow"] .kit-kids {
+  --ink: #111; --brown: #111; --chilli: #111; --saffron: #111;
+}
+@media print {
+  html[data-theme="glow"] body { background: #fff; }
+}

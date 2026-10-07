@@ -1,0 +1,73 @@
+---
+layout: default
+body_class: home
+---
+<section class="hero">
+  <p class="eyebrow">{{ site.contact.opening }}</p>
+  <h1>{{ site.title }}</h1>
+  <p class="lead">{{ site.tagline }}</p>
+  <p>Smoky kebabs, flaky rolls and slow-cooked dum biryani, made to order and priced for every day.</p>
+  <p class="cta">
+    <a class="btn" href="{{ '/menu/' | relative_url }}">See the tentative menu</a>
+    <a class="btn btn-ghost" href="{{ '/flyer/' | relative_url }}">Get the flyer</a>
+  </p>
+</section>
+
+<section class="features">
+  <article>
+    <h2>🔥 Off the Charcoal</h2>
+    <p>Tikkas and seekh kebabs grilled over real coal, never reheated.</p>
+  </article>
+  <article>
+    <h2>🌯 Rolls in Minutes</h2>
+    <p>Kolkata-style paratha rolls, ready while you wait.</p>
+  </article>
+  <article>
+    <h2>🍚 Dum Biryani Daily</h2>
+    <p>Small batches through the day so every plate is fresh.</p>
+  </article>
+  <article>
+    <h2>{% include diet-mark.html type="veg" %} Veg Friendly</h2>
+    <p>Mostly non-veg, but our paneer and aloo picks hold their own.</p>
+  </article>
+</section>
+
+<section class="teaser">
+  <h2>Crowd favourites</h2>
+  <ul class="teaser-list">
+    {%- for cat in site.data.menu -%}
+      {%- for item in cat.items -%}
+        {%- if item.tag -%}
+    <li>
+      {% include diet-mark.html type=item.type %}
+      <strong>{{ item.name }}</strong>
+      <span class="badge">{{ item.tag }}</span>
+      <span class="price">{% if item.sizes %}from {% endif %}{{ site.currency }}{% if item.sizes %}{{ item.sizes.first.price }}{% else %}{{ item.price }}{% endif %}</span>
+    </li>
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  </ul>
+  <p><a href="{{ '/menu/' | relative_url }}">View the full menu &rarr;</a></p>
+</section>
+
+<section class="print-kit">
+  <h2>Print kit</h2>
+  <p>Every page below is set up for A4 printing. Open a page and use the Print button, or press Ctrl/Cmd + P.</p>
+  <div class="kit-grid">
+    {% for item in site.data.print_pages %}
+    <a class="kit-card" href="{{ item.url | relative_url }}"><strong>{{ item.home_title }}</strong><span>{{ item.home_description }}</span></a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Find us</h2>
+  <ul>
+    <li>📍 {{ site.contact.address }}</li>
+    <li>🕛 {{ site.contact.hours }}</li>
+    <li>📞 {{ site.contact.phone }}</li>
+    <li>✉️ {{ site.contact.email }}</li>
+    <li>📷 {{ site.contact.instagram }}</li>
+  </ul>
+</section>

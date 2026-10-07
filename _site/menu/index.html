@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu | Saif's Kitchen</title>
+  <meta name="description" content="An upcoming Indian fast food joint serving kebabs, rolls, biryani and burgers. Mostly non-veg, with plenty for our veg friends too.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Yatra+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+  <link rel="stylesheet" href="/assets/css/themes/variant.css">
+  <link rel="stylesheet" href="/assets/css/theme-controls.css">
+  <script src="/assets/js/theme.js" data-baseurl=""></script>
+</head>
+<body class="print-page">
+  <header class="site-header no-print">
+  <a class="brand" href="/">Saif's Kitchen</a>
+  <nav>
+    
+    <a href="/">Home</a>
+    
+    <a href="/menu/" aria-current="page">Menu</a>
+    
+    <a href="/flyer/">Flyer</a>
+    
+    <a href="/media/">Print Media</a>
+    
+    <a href="/print-kit/">Print Kit</a>
+    
+  </nav>
+  <label class="theme-selector" hidden>Theme
+    <select id="site-theme">
+      <option value="original">Original</option>
+      <option value="glow">Charcoal Glow</option>
+    </select>
+  </label>
+</header>
+
+<div class="print-bar no-print">
+  <span>This page is print-ready (A4, 2 pages).</span>
+  <button type="button" onclick="window.print()">🖨️ Print</button>
+</div>
+
+
+  <div class="page-layout">
+    <details class="control-sidebar no-print" id="control-sidebar" open>
+      <summary>Page controls</summary>
+      <div class="control-sidebar-content">
+        <details class="theme-controls no-print" id="theme-controls" hidden>
+  <summary>Customize theme</summary>
+  <p id="theme-help">Choose Charcoal Glow to customize website and artwork decoration. Original stays unchanged.</p>
+  <fieldset id="theme-settings">
+    <legend>Appearance</legend>
+    <div class="theme-fields">
+      <label>Palette <select data-theme-setting="palette">
+        <option value="gold">Charcoal &amp; Gold</option>
+        <option value="copper">Midnight &amp; Copper</option>
+        <option value="forest">Forest &amp; Ivory</option>
+      </select></label>
+      <label>Background <select data-theme-setting="background">
+        <option value="radial">Radial glow</option><option value="solid">Solid</option>
+      </select></label>
+      <label>Base colour <input type="color" data-theme-setting="base"></label>
+      <label>Glow colour <input type="color" data-theme-setting="light"></label>
+      <label>Glow strength (%) <input type="number" min="0" max="60" step="1" data-theme-setting="strength"></label>
+      <label>Glow position <select data-theme-setting="position">
+        <option value="top">Top centre</option><option value="center">Centre</option>
+        <option value="left">Top left</option><option value="right">Top right</option>
+        <option value="bottom">Bottom centre</option>
+      </select></label>
+    </div>
+    
+    
+    <fieldset>
+      <legend>Border</legend>
+      <div class="theme-fields">
+        <label class="theme-toggle"><input type="checkbox" data-theme-setting="border"> Enabled</label>
+        <label>Style <select data-theme-setting="borderStyle">
+          <option value="solid">Solid</option><option value="dashed">Dashed</option>
+          <option value="dotted">Dotted</option><option value="double">Double</option>
+          <option value="ornate">Ornate</option><option value="geometric">Geometric</option>
+        </select></label>
+        <label>Width (mm) <input type="number" min="0.25" max="2" step="0.25" data-theme-setting="borderWidth"></label>
+        <label>Colour <input type="color" data-theme-setting="borderColor"></label>
+        <label>Motif size (mm) <input type="number" min="2" max="8" step="0.5" data-theme-setting="borderMotifSize"></label>
+        
+      </div>
+    </fieldset>
+    
+    <fieldset>
+      <legend>Outline</legend>
+      <div class="theme-fields">
+        <label class="theme-toggle"><input type="checkbox" data-theme-setting="outline"> Enabled</label>
+        <label>Style <select data-theme-setting="outlineStyle">
+          <option value="solid">Solid</option><option value="dashed">Dashed</option>
+          <option value="dotted">Dotted</option><option value="double">Double</option>
+          <option value="ornate">Ornate</option><option value="geometric">Geometric</option>
+        </select></label>
+        <label>Width (mm) <input type="number" min="0.25" max="2" step="0.25" data-theme-setting="outlineWidth"></label>
+        <label>Colour <input type="color" data-theme-setting="outlineColor"></label>
+        <label>Motif size (mm) <input type="number" min="2" max="8" step="0.5" data-theme-setting="outlineMotifSize"></label>
+        
+        <label>Inset gap (mm) <input type="number" min="1" max="4" step="0.25" data-theme-setting="gap"></label>
+        
+      </div>
+    </fieldset>
+    
+    <button type="button" class="btn" id="theme-reset">Reset variant</button>
+    <button type="button" class="btn btn-ghost" id="theme-share">Copy styled link</button>
+  </fieldset>
+  <p class="small">Ornate adds curved corner flourishes; Geometric adds stepped corners and diamonds.
+    Motif size applies to those styles only. Frames stay inside the design.
+    Motifs and strokes are capped to the available clearance, especially on small cards and mixed frames.
+    Small cards use thinner frames and a smaller gap to protect text.
+    Cut/fold guides, diet symbols, QR areas and ink-saving sheets stay fixed.
+    Dark paper backgrounds use more ink; enable background graphics when printing.</p>
+  <p id="theme-status" role="status" aria-live="polite"></p>
+</details>
+
+        
+      </div>
+    </details>
+    <main>
+      <section class="sheet menu-sheet">
+  <header class="menu-head">
+    <p class="eyebrow">Tentative Menu</p>
+    <h1>Saif's Kitchen</h1>
+    <p class="menu-legend">
+      <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+ Veg
+      <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+ Non-veg
+      <span class="mark mark-egg" role="img" aria-label="Contains egg" title="Contains egg"></span>
+ Egg
+      <span class="spice">🌶️</span> Spice level
+    </p>
+  </header>
+
+  <div class="menu-cols">
+    <div class="menu-cat">
+      <h2>Kebabs & Tikkas</h2><p class="cat-note">Charcoal-grilled, served with mint chutney and onion rings</p>
+      <ul>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Chicken Tikka (6 pcs)</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹229</span>
+            
+          </div>
+          <p class="item-desc">Yoghurt and red chilli marinated boneless chicken <span class="badge">Bestseller</span></p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Malai Chicken Tikka (6 pcs)</span>
+            <span class="spice" aria-label="Spice level 1 of 3" title="Spice level 1 of 3">🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹249</span>
+            
+          </div>
+          <p class="item-desc">Creamy cashew and cheese marinade, mildly spiced</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Mutton Seekh Kebab (4 pcs)</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹289</span>
+            
+          </div>
+          <p class="item-desc">Minced mutton skewers with house garam masala</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Tandoori Chicken</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+          </div>
+          <p class="item-desc">Classic bone-in, smoky and tangy</p>
+          
+          <div class="item-prices">
+            
+            <div class="item-price-line">
+              <span class="item-variant">Half</span>
+              <span class="dots"></span>
+              <span class="price">₹259</span>
+            </div>
+            
+            <div class="item-price-line">
+              <span class="item-variant">Full</span>
+              <span class="dots"></span>
+              <span class="price">₹469</span>
+            </div>
+            
+          </div>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Fish Amritsari</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹279</span>
+            
+          </div>
+          <p class="item-desc">Gram flour battered, ajwain spiced fried fish</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+
+            <span class="item-name">Paneer Tikka (6 pcs)</span>
+            <span class="spice" aria-label="Spice level 1 of 3" title="Spice level 1 of 3">🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹209</span>
+            
+          </div>
+          <p class="item-desc">Cottage cheese, capsicum and onion off the grill</p>
+          
+        </li>
+      </ul>
+    </div>
+    <div class="menu-cat">
+      <h2>Rolls & Wraps</h2><p class="cat-note">Wrapped in a flaky paratha. Add an egg layer for ₹20</p>
+      <ul>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Chicken Tikka Roll</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹149</span>
+            
+          </div>
+          <p class="item-desc">Tikka, pickled onions, green chutney <span class="badge">Must try</span></p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Mutton Seekh Roll</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹179</span>
+            
+          </div>
+          <p class="item-desc">Seekh kebab, onions and lime</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-egg" role="img" aria-label="Contains egg" title="Contains egg"></span>
+
+            <span class="item-name">Double Egg Roll</span>
+            <span class="spice" aria-label="Spice level 1 of 3" title="Spice level 1 of 3">🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹99</span>
+            
+          </div>
+          <p class="item-desc">Kolkata-style egg paratha roll</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Chicken Shawarma</span>
+            <span class="spice" aria-label="Spice level 1 of 3" title="Spice level 1 of 3">🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹139</span>
+            
+          </div>
+          <p class="item-desc">Rotisserie chicken, garlic toum, pickles</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+
+            <span class="item-name">Paneer Tikka Roll</span>
+            <span class="spice" aria-label="Spice level 1 of 3" title="Spice level 1 of 3">🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹129</span>
+            
+          </div>
+          <p class="item-desc">Grilled paneer with tangy chutney</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+
+            <span class="item-name">Aloo Tikki Roll</span>
+            <span class="spice" aria-label="Spice level 1 of 3" title="Spice level 1 of 3">🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹89</span>
+            
+          </div>
+          <p class="item-desc">Crispy spiced potato patty with sauces</p>
+          
+        </li>
+      </ul>
+    </div>
+    <div class="menu-cat">
+      <h2>Burgers</h2><p class="cat-note">Toasted buns, desi sauces</p>
+      <ul>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Tandoori Chicken Burger</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹169</span>
+            
+          </div>
+          <p class="item-desc">Grilled tandoori fillet, mint mayo</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Crispy Chicken Zinger</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹159</span>
+            
+          </div>
+          <p class="item-desc">Fried chicken fillet, peri-peri mayo</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Keema Pav Burger</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹189</span>
+            
+          </div>
+          <p class="item-desc">Spiced mutton keema, buttered bun</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+
+            <span class="item-name">Masala Aloo Burger</span>
+            <span class="spice" aria-label="Spice level 1 of 3" title="Spice level 1 of 3">🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹89</span>
+            
+          </div>
+          <p class="item-desc">Aloo tikki, onion, tomato, chutney</p>
+          
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="menu-foot">
+    <span class="menu-contact">
+      <a href="tel:+918219261610+919805449900" aria-label="Call +91 82192 61610 +91 98054 49900">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.08 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69A2 2 0 0 1 22 16.92Z"/></svg>
+        +91 82192 61610 +91 98054 49900
+      </a>
+      <a href="https://www.instagram.com/saifs.kitchen/" aria-label="Instagram @saifs.kitchen">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".75" class="icon-dot"/></svg>
+        @saifs.kitchen
+      </a>
+    </span>
+    <span>Prices in INR, inclusive of taxes. Menu and prices are tentative.</span>
+    <span>Page 1 / 2</span>
+  </footer>
+</section><section class="sheet menu-sheet">
+  <header class="menu-head">
+    <p class="eyebrow">Tentative Menu</p>
+    <h1>Saif's Kitchen</h1>
+    <p class="menu-legend">
+      <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+ Veg
+      <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+ Non-veg
+      <span class="mark mark-egg" role="img" aria-label="Contains egg" title="Contains egg"></span>
+ Egg
+      <span class="spice">🌶️</span> Spice level
+    </p>
+  </header>
+
+  <div class="menu-cols">
+    <div class="menu-cat">
+      <h2>Biryani & Rice Bowls</h2><p class="cat-note">Dum-cooked in small batches; served with raita and salan</p>
+      <ul>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Chicken Dum Biryani</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+          </div>
+          <p class="item-desc">Hyderabadi-style, long-grain basmati <span class="badge">Chef's special</span></p>
+          
+          <div class="item-prices">
+            
+            <div class="item-price-line">
+              <span class="item-variant">Half</span>
+              <span class="dots"></span>
+              <span class="price">₹149</span>
+            </div>
+            
+            <div class="item-price-line">
+              <span class="item-variant">Full</span>
+              <span class="dots"></span>
+              <span class="price">₹249</span>
+            </div>
+            
+          </div>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Mutton Dum Biryani</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+          </div>
+          <p class="item-desc">Tender bone-in mutton, saffron rice</p>
+          
+          <div class="item-prices">
+            
+            <div class="item-price-line">
+              <span class="item-variant">Half</span>
+              <span class="dots"></span>
+              <span class="price">₹199</span>
+            </div>
+            
+            <div class="item-price-line">
+              <span class="item-variant">Full</span>
+              <span class="dots"></span>
+              <span class="price">₹329</span>
+            </div>
+            
+          </div>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-egg" role="img" aria-label="Contains egg" title="Contains egg"></span>
+
+            <span class="item-name">Egg Biryani</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹179</span>
+            
+          </div>
+          <p class="item-desc">Boiled eggs tossed in masala, dum rice</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Butter Chicken Rice Bowl</span>
+            <span class="spice" aria-label="Spice level 1 of 3" title="Spice level 1 of 3">🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹199</span>
+            
+          </div>
+          <p class="item-desc">Makhani gravy over jeera rice</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+
+            <span class="item-name">Veg Dum Biryani</span>
+            <span class="spice" aria-label="Spice level 1 of 3" title="Spice level 1 of 3">🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹179</span>
+            
+          </div>
+          <p class="item-desc">Seasonal vegetables, fried onions, mint</p>
+          
+        </li>
+      </ul>
+    </div>
+    <div class="menu-cat">
+      <h2>Sides</h2>
+      <ul>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Chicken 65</span>
+            <span class="spice" aria-label="Spice level 3 of 3" title="Spice level 3 of 3">🌶️🌶️🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹189</span>
+            
+          </div>
+          <p class="item-desc">Crispy, curry leaf tempered bites</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+
+            <span class="item-name">Chicken Lollipop (5 pcs)</span>
+            <span class="spice" aria-label="Spice level 2 of 3" title="Spice level 2 of 3">🌶️🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹199</span>
+            
+          </div>
+          <p class="item-desc">Indo-Chinese style with schezwan dip</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+
+            <span class="item-name">Masala Fries</span>
+            <span class="spice" aria-label="Spice level 1 of 3" title="Spice level 1 of 3">🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹89</span>
+            
+          </div>
+          <p class="item-desc">Fries tossed in chaat masala</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+
+            <span class="item-name">Samosa (2 pcs)</span>
+            <span class="spice" aria-label="Spice level 1 of 3" title="Spice level 1 of 3">🌶️</span>
+            
+            <span class="dots"></span>
+            <span class="price">₹49</span>
+            
+          </div>
+          <p class="item-desc">Classic potato and pea filling</p>
+          
+        </li>
+      </ul>
+    </div>
+    <div class="menu-cat">
+      <h2>Drinks & Desserts</h2>
+      <ul>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+
+            <span class="item-name">Masala Chaas</span>
+            
+            
+            <span class="dots"></span>
+            <span class="price">₹49</span>
+            
+          </div>
+          <p class="item-desc">Spiced buttermilk</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+
+            <span class="item-name">Sweet Lassi</span>
+            
+            
+            <span class="dots"></span>
+            <span class="price">₹69</span>
+            
+          </div>
+          <p class="item-desc">Thick churned yoghurt drink</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+
+            <span class="item-name">Nimbu Soda</span>
+            
+            
+            <span class="dots"></span>
+            <span class="price">₹49</span>
+            
+          </div>
+          <p class="item-desc">Sweet, salted or mixed</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+
+            <span class="item-name">Gulab Jamun (2 pcs)</span>
+            
+            
+            <span class="dots"></span>
+            <span class="price">₹59</span>
+            
+          </div>
+          <p class="item-desc">Warm, served in syrup</p>
+          
+        </li>
+        <li class="menu-item">
+          <div class="item-heading">
+            <span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+
+            <span class="item-name">Phirni</span>
+            
+            
+            <span class="dots"></span>
+            <span class="price">₹79</span>
+            
+          </div>
+          <p class="item-desc">Chilled rice pudding in a clay pot</p>
+          
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="combos">
+    <h2>Combo Deals</h2>
+    <div class="combo-grid">
+      <div class="combo">
+        <div><span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+ <strong>Roll + Fries + Drink</strong></div>
+        <p>Any chicken roll, masala fries, nimbu soda</p>
+        <span class="price">₹229</span>
+      </div>
+      <div class="combo">
+        <div><span class="mark mark-nonveg" role="img" aria-label="Non-vegetarian" title="Non-vegetarian"></span>
+ <strong>Biryani Meal</strong></div>
+        <p>Chicken biryani, 2 pc Chicken 65, phirni</p>
+        <span class="price">₹349</span>
+      </div>
+      <div class="combo">
+        <div><span class="mark mark-veg" role="img" aria-label="Vegetarian" title="Vegetarian"></span>
+ <strong>Veg Thali-in-a-Box</strong></div>
+        <p>Veg biryani, paneer tikka roll, chaas</p>
+        <span class="price">₹279</span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="menu-foot">
+    <span class="menu-contact">
+      <a href="tel:+918219261610+919805449900" aria-label="Call +91 82192 61610 +91 98054 49900">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.08 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69A2 2 0 0 1 22 16.92Z"/></svg>
+        +91 82192 61610 +91 98054 49900
+      </a>
+      <a href="https://www.instagram.com/saifs.kitchen/" aria-label="Instagram @saifs.kitchen">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".75" class="icon-dot"/></svg>
+        @saifs.kitchen
+      </a>
+    </span>
+    <span>Prices in INR, inclusive of taxes. Menu and prices are tentative.</span>
+    <span>Page 2 / 2</span>
+  </footer>
+</section>
+    </main>
+  </div>
+  <footer class="site-footer no-print">
+  <p>Saif's Kitchen &middot; Near Raj Anjali, Village Bamta, Dist. Bilaspur, Himachal Pradesh 174001 &middot; +91 82192 61610 +91 98054 49900</p>
+  <p class="small">All names, prices, dates and contact details are subject to change.</p>
+</footer>
+
+</body>
+</html>

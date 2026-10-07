@@ -1,0 +1,9 @@
+<article class="loyalty-card">
+  <p class="eyebrow">{{ site.title | escape }}</p>
+  <h2>A little loyalty, a tasty reward.</h2>
+  <div class="stamp-row" aria-label="Six stamp spaces">
+    {% for stamp in (1..6) %}<span>{{ stamp }}</span>{% endfor %}
+  </div>
+  <p>Collect 6 stamps · get a free regular roll</p>
+  <p class="small">Sample offer · one stamp per paid visit.<br>Valid until DD/MM/YYYY. Not combinable.</p>
+</article>

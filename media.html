@@ -1,0 +1,45 @@
+---
+layout: default
+title: Print Media
+permalink: /media/
+printable: true
+paper: A4, 3 pages
+body_class: print-page
+---
+{%- comment -%} Sheet 1: Table tent. Fold along the centre line; top half is rotated so it reads correctly from both sides. {%- endcomment -%}
+<section class="sheet tent">
+  {%- for side in (1..2) %}
+  <div class="tent-half{% if side == 1 %} flipped{% endif %}">
+    <p class="eyebrow">Try today's special</p>
+    <h2>Chicken Dum Biryani</h2>
+    <p>{% include diet-mark.html type="nonveg" %} Hyderabadi-style, with raita &amp; salan</p>
+    <p class="tent-price">{{ site.currency }}249</p>
+    <p class="small">{{ site.title }} &middot; {{ site.contact.instagram }}</p>
+  </div>
+  {%- endfor %}
+  <p class="cut-guide">Table tent: fold along the dashed line</p>
+</section>
+
+{%- comment -%} Sheet 2: Discount coupons (cut along dashed lines). {%- endcomment -%}
+<section class="sheet coupons">
+  {%- for offer in site.data.media.coupons %}
+  <div class="coupon">
+    <p class="eyebrow">{{ site.title }}</p>
+    <h3>{{ offer }}</h3>
+    <p class="small">Code: SAIF{{ forloop.index | prepend: "0" }} &middot; Valid till: DD/MM/YYYY &middot; One per visit</p>
+  </div>
+  {%- endfor %}
+</section>
+
+{%- comment -%} Sheet 3: Business cards, 85 x 55 mm, 10 per sheet. {%- endcomment -%}
+<section class="sheet cards">
+  {%- for i in (1..10) %}
+  <div class="bcard">
+    <strong>{{ site.title }}</strong>
+    <span class="small">{{ site.tagline }}</span>
+    <span>📞 {{ site.contact.phone }}</span>
+    <span>📷 {{ site.contact.instagram }}</span>
+    <span class="small">{{ site.contact.address }}</span>
+  </div>
+  {%- endfor %}
+</section>
